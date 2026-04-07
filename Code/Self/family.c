@@ -18,7 +18,6 @@ int get_process_parent_pid(void* ctx){
     pid_t p_pid = BPF_CORE_READ(task, parent, tgid) & MASK;
     bpf_printk("PID %d was spawned by %d", pid, p_pid);
 
-    //bpf_printk("PID %d was spawned", pid);
     return 0;
 }
 
